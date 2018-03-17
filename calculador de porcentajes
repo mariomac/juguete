@@ -1,0 +1,13 @@
+programa Calculador de porcentajes
+
+dato pagar como Numero con decimales
+dato porcentaje como Numero con decimales
+
+escribe "A cuánto asciende el tiquet?"
+teclado -> pagar
+
+escribe "Qué porcentaje de propina quieres pagar?"
+teclado -> porcentaje
+
+pagar <- pagar + pagar * porcentaje / 100
+escribe "Deberás pagar " ; pagar ; " euros"

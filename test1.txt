@@ -1,0 +1,5 @@
+programa Ese peacho programa
+
+dato esePeasoDato como Número
+dato otroDatoDelProgramaMas como Número con Decimales
+Dato datoTexto como texto
