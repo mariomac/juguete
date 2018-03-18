@@ -1,5 +1,8 @@
 programa "Ese peacho programa"
 
 dato esePeasoDato como Número
-dato otroDatoDelProgramaMas como Número con Decimales
+
+
+dato otroDatoDelProgramaMas como Numero  // Comentario aqui
+   // comentario aca
 Dato datoTexto como texto

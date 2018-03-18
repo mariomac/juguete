@@ -1,14 +1,18 @@
-programa Nombre de programa
+programa "Nombre de programa"
+
+var <- 2 * (1 - 6 * (3 + 1.4) / 2)
 
 dato var1 como Numero
-dato var2 como Numero con decimales
+dato var2 como Numero
 dato var3 como Texto
 
 var1 <- 3 // Ambas direcciones para asignar
 4.5 -> var2
+var3 <- "Que pasa tronko"
 
-si var1 = 3 o var2 < 5 :// también serviría ó
+si var1 = 3 o var2 < 5 { // también serviría ó
     escribe "texto " ; var3 ; " se concatena con puntos y comas"
+}
 
 repite 5 veces {
     escribe "hola"
@@ -18,17 +22,8 @@ para dato i como Numero de 5 a 6: // inline data definition
     escribe "vuelta " i
 
 para var de 10 a 1: // decrementa.
-    
+
 mientras var1 < 100 {
     inc var1  // "inc" es una abreviación de "incrementa"
-    var2 = var1 / 2
+    var2 <- var1 / 2
 }
-
-
-
-
-
-
-
-
-
