@@ -1,27 +1,42 @@
 grammar gramatica;
 
-NL: [\n]+;
+program
+    : NL* cabecera NL
+    (NL* declVariable)*
+    NL* EOF;
 
-start: header decl_variable*;
+cabecera: PROGRAMA CADENA;
 
-header: PROGRAMA WS {ignore=false} .~NL* {ignore=true} NL;
+declVariable: DATO ID_DATO COMO tipoDato;
 
-decl_variable: DATO WS LETTER(DIGIT|LETTER)+ WS COMO WS tipo_dato NL;
+tipoDato: real | entero | texto;
+entero : NUMERO;
+real : NUMERO CON DECIMALES;
+texto: TEXTO;
 
-tipo_dato: NUMERO | TEXTO | (NUMERO CON_DECIMALES);
+CADENA :  ('"' (ESC_CHAR | ~["\\\n\r])* '"') | ('\'' (ESC_CHAR | ~['\\\n\r])* '\'');
 
-DIGIT : [0-9] ;
-LETTER : [a-zA-ZáéíóúïÁÉÍÓÚÏÑñ$_];
-WS: [ \t]+ ;
-SK: [\r]+ -> skip;
-
-// Keywords
-COMO: [Cc][Oo][Mm][Oo];
-DATO: [Dd][Aa][Tt][Oo];
+// strings can be surronded by 'simple' or "double" commas
 PROGRAMA: [Pp][Rr][Oo][Gg][Rr][Aa][Mm][Aa];
+DATO: [dD][aA][tT][oO];
+COMO: [Cc][Oo][Mm][Oo];
+CON: [Cc][Oo][Nn];
+DECIMALES: [Dd][Ee][Cc][Ii][Mm][Aa][Ll][Ee][Ss];
 NUMERO: [Nn][UuÚú][Mm][Ee][Rr][Oo];
 TEXTO: [Tt][Ee][Xx][Tt][Oo];
-CON_DECIMALES: [Cc][Oo][Nn] WS+ [Dd][Ee][Cc][Ii][Mm][Aa][Ll][Ee][Ss];
 
+fragment ESC_CHAR :   '\\' (["\\/bfnrt] | UNICODE) ;
+fragment UNICODE : 'u' HEX HEX HEX HEX ;
+fragment HEX : [0-9a-fA-F] ;
+
+ID_DATO: LETTER(DIGIT|LETTER)+;
+
+
+fragment DIGIT : [0-9] ;
+fragment LETTER : [a-zA-ZáéíóúïÁÉÍÓÚÏÑñ$_];
+
+
+WS: [ \t\r]+ -> skip;
+NL: [\n]+;
 
 
