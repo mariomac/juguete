@@ -1,6 +1,12 @@
 programa "Nombre de programa"
 
-var <- 2 * (1 - 6 * (3 + 1.4) / 2)
+si var1 < var2 y (var1 = 3 o var2 < 5) { // también serviría ó
+    escribe "texto " + // se concatena con '+'
+}
+
+strVar <- "texto " + var + " concatenado"
+
+var <- 2 * (var1 - -8 * (+3 + -1.4) / var2)
 
 dato var1 como Numero
 dato var2 como Numero
@@ -9,10 +15,6 @@ dato var3 como Texto
 var1 <- 3 // Ambas direcciones para asignar
 4.5 -> var2
 var3 <- "Que pasa tronko"
-
-si var1 = 3 o var2 < 5 { // también serviría ó
-    escribe "texto " ; var3 ; " se concatena con puntos y comas"
-}
 
 repite 5 veces {
     escribe "hola"
