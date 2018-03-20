@@ -1,7 +1,7 @@
 programa "Nombre de programa"
 
 si var1 < var2 y (var1 = 3 o var2 < 5) { // también serviría ó
-    escribe "texto " + // se concatena con '+'
+    escribe "texto " + var // se concatena con '+'
 }
 
 strVar <- "texto " + var + " concatenado"
@@ -11,9 +11,15 @@ var <- 2 * (var1 - -8 * (+3 + -1.4) / var2)
 dato var1 como Numero
 dato var2 como Numero
 dato var3 como Texto
+dato var4 como Lógico
+
+var4 <- cierto
+var4 <- var2 >= 3
+
+var <- NO (var2 < 4)
 
 var1 <- 3 // Ambas direcciones para asignar
-4.5 -> var2
+4.5 <= 5 -> var2
 var3 <- "Que pasa tronko"
 
 repite 5 veces {
